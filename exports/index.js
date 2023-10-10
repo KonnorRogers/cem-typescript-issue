@@ -1,3 +1,10 @@
-import LightPen from "./light-pen-register.js";
+import {greeting} from "../internal/index.js"
 
-export default LightPen
+/**
+ * Greet somebody!
+ */
+function greet () {
+  console.log(greeting)
+}
+
+greet()
