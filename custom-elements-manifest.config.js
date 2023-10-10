@@ -1,15 +1,10 @@
 // @ts-check
-// import ts from 'typescript'
-import { getTsProgram, expandTypesPlugin } from "cem-plugin-expanded-types";
-import { globSync } from "glob";
-import path from "path";
-// import { typeExpander, getTsProgram } from "./type-expander.js"
 
 export default {
   /** Globs to analyze */
-  globs: ['exports/**/*.js', 'internal/**/*.js', 'types/**/*.d.ts'],
+  globs: ['./exports/**/*.js', './internal/**/*.js'],
   /** Globs to exclude */
-  exclude: ['./node_modules', './docs'],
+  // exclude: ['./node_modules', './docs'],
   /** Directory to output CEM to */
   outdir: '.',
   /** Run in dev mode, provides extra logging */
@@ -17,11 +12,12 @@ export default {
   /** Run in watch mode, runs on file changes */
   watch: process.argv.includes("--watch"),
   /** Include third party custom elements manifests */
-  dependencies: true,
+  // Change to false and it works fine.
+  dependencies: false,
   /** Output CEM path to `package.json`, defaults to true */
   packagejson: true,
   /** Enable special handling for litelement */
-  litelement: true,
+  litelement: false,
   /** Enable special handling for catalyst */
   catalyst: false,
   /** Enable special handling for fast */
@@ -30,7 +26,6 @@ export default {
   stencil: false,
   /** Provide custom plugins */
   plugins: [
-    // expandTypesPlugin()
   ],
 
   overrideModuleCreation: ({ts, globs}) => {

@@ -2,16 +2,6 @@
   "name": "light-pen",
   "version": "1.0.2",
   "description": "A variety of simple components that match an aria-role",
-  "main": "./exports/index.js",
-  "module": "./exports/index.js",
-  "types": "./exports/index.d.ts",
-  "exports": {
-    ".": "./exports/index.js",
-    "./package.json": "./package.json",
-    "./exports/*.js": "./exports/*.js",
-    "./exports/*": "./exports/*",
-    "./types/*": "./types/*.d.ts"
-  },
   "type": "module",
   "files": [
     "exports",
